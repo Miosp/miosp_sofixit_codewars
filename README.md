@@ -51,3 +51,35 @@ int material(vector<int> array){
 Here the complexity is O(n) since we run three loops on whole array, but the size rose complexity to O(n) since we store two arrays of size n.
 
 ## 4. Optimizing further
+We can do even better! We can observe that for each pillar we need to know minimum height of biggest pillars on the left and right. We can ensure that we have a minimum pillar at a particular time by using a two pointer approach. We can start with two pointers at the beginning and end of the array. Then we can move the pointer with the smaller value towards the other pointer. This way we can ensure that we have a minimum pillar at a particular time. Here is an implementation in c++.
+
+```cpp
+int material(vector<int> array){
+    int result = 0;
+    int left = 0;
+    int right = array.size()-1;
+    int leftMax = 0;
+    int rightMax = 0;
+
+    while(left < right){
+        if(array[left] < array[right]){
+            if(array[left] >= leftMax){
+                leftMax = array[left];
+            } else {
+                result += leftMax - array[left];
+            }
+            left++;
+        } else {
+            if(array[right] >= rightMax){
+                rightMax = array[right];
+            } else {
+                result += rightMax - array[right];
+            }
+            right--;
+        }
+    }
+
+    return result;
+}
+```
+This way we don't need to store any additional data, so space complexity falls to O(1) and time complexity stays O(n).
