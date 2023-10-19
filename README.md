@@ -86,3 +86,6 @@ This way we don't need to store any additional data, so space complexity falls t
 
 ## 5. Practical presentation on a website
 Since it's always nice to see how any solution works in practice, i decided to create a website where you can see the solution in action. You can find it [here](https://miosp.github.io/miosp_sofixit_codewars/). I used Svelte and Typescript to create it. The graphical aseets are based on the graphics from original problem website and i tried to recreate them as closely as i could. The website is only a small addition to the solution, so it is not very feature rich, but it is enough to show how the solution works. I hope you like it.
+
+## 6. AI?
+Since the material function is deterministic and takes an array of integers, we can try to train a model, which will try to predict the output of the function. Unfortunately since the input data is not treated as a sequence any methods such as RNNs and LSTMs are out of the question. Also CNNs are not good, because of global nature of each data point (any height can potentially influence any other). I tried to use a simple network with a couple of layers and in order to support variable size - use padding, but my results were horrible. Perhaps I have not enough knowledge in this field to choose right architecture, but i think that this problem is not suited for neural networks.
