@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: "xirod";
-  src: url("https://sofixit.pl/css/xirod.ttf") format('truetype');
+  src: url("./lib/assets/xirod.ttf") format('truetype');
 }
 
 #app{
@@ -62,7 +62,11 @@ button:hover {
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none;
+}
+
+button:active {
+  outline: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -76,4 +80,21 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+input {
+  border-radius: 8px;
+  border: 1px solid #646cff;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: transparent;
+  transition: border-color 0.25s;
+  width: 80%;
+}
+
+input:focus,input:focus-visible {
+  outline: none;
+  border-color: #cd53f2;
 }

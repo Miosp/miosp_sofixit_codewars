@@ -30,7 +30,7 @@
 
 <main>
   <div class="rowContainer">
-    <div style="padding-right: min(10%, 100px)">
+    <div style="padding-right: 2%">
       <p>Enter arguments for the "material" function:</p>
       <input type="text" name="functionInput" id="mainInput" bind:value={input} on:keyup={handleChange}>
       {#if error}
@@ -38,7 +38,7 @@
       {/if}
     </div>
     <div class="buttonContainer">
-      <button on:click={()=>{if(!error && input!="" && !validityChecker())simulation.runSimulation()}}>Run!</button>
+      <button style="margin-bottom: 5%" on:click={()=>{if(!error && input!="" && !validityChecker())simulation.runSimulation()}}>Run!</button>
       <button on:click={()=>{if(!error && input!="" && !validityChecker()){simulation.cleanSimulation(); simulationRan=false;}}}>Clean</button>
     </div>
     {#if simulationRan}
@@ -74,6 +74,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-bottom: 2vh;
   }
 
   .buttonContainer{
@@ -81,6 +82,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: min(10%, 100px);
+    width: 10%;
   }
 </style>
