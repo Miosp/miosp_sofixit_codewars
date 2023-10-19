@@ -83,3 +83,6 @@ int material(vector<int> array){
 }
 ```
 This way we don't need to store any additional data, so space complexity falls to O(1) and time complexity stays O(n).
+
+## 5. Practical presentation on a website
+Since it's always nice to see how any solution works in practice, i decided to create a website where you can see the solution in action. You can find it [here](https://miosp.github.io/miosp_sofixit_codewars/). I used Svelte and Typescript to create it. The graphical aseets are based on the graphics from original problem website and i tried to recreate them as closely as i could. The website is only a small addition to the solution, so it is not very feature rich, but it is enough to show how the solution works. I hope you like it.
