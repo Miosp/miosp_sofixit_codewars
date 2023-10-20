@@ -25,7 +25,6 @@
   }
 
   $: inputArray = input.split(",").map((x)=>Number(x));
-  $: if(simulationRunning) simulationRan=true;
 </script>
 
 <main>
@@ -34,12 +33,12 @@
       <p>Enter arguments for the "material" function:</p>
       <input type="text" name="functionInput" id="mainInput" bind:value={input} on:keyup={handleChange}>
       {#if error}
-      <p style="color: red;">Input must be a comma separated list of numbers</p>
+      <p style="color: red;">Input must be a comma separated list of positive numbers</p>
       {/if}
     </div>
     <div class="buttonContainer">
       <button style="margin-bottom: 5%" on:click={()=>{if(!error && input!="" && !validityChecker())simulation.runSimulation()}}>Run!</button>
-      <button on:click={()=>{if(!error && input!="" && !validityChecker()){simulation.cleanSimulation(); simulationRan=false;}}}>Clean</button>
+      <button on:click={()=>{if(!error && input!="" && !validityChecker()){simulation.cleanSimulation(); simulationRan=false;}}} disabled={simulationRunning}>Clean</button>
     </div>
     {#if simulationRan}
       <div>
@@ -50,7 +49,7 @@
     {/if}
   </div>
   {#if !error && input!="" && !validityChecker()}
-    <Simulation input={inputArray} bind:this={simulation} bind:right={simulationRight} bind:left={simulationLeft} bind:result={simulationResult} bind:running={simulationRunning}/>
+    <Simulation input={inputArray} bind:this={simulation} bind:right={simulationRight} bind:left={simulationLeft} bind:result={simulationResult} bind:running={simulationRunning} bind:simulationRan={simulationRan}/>
   {/if}
 </main>
 

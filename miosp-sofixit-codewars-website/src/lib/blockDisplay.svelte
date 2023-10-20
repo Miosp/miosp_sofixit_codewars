@@ -1,12 +1,13 @@
 <script lang="ts">
     import { tweened } from "svelte/motion";
+    import { cubicOut as cu } from "svelte/easing";
     import block from "./assets/block.png";
 
     export let height: number;
     export let base: number;
     export let fluidHeight: number;
 
-    const fluidHeightTweened = tweened(0, {duration: 1000});
+    const fluidHeightTweened = tweened(0, {duration: 1000, easing: cu});
 
     $: fluidHeightTweened.set(fluidHeight);
 
