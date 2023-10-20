@@ -71,8 +71,8 @@
     $: details = input.map((x, i)=>({height: x, fluidHeight: fluidHeight[i]}));
     $: if(running) simulationRan=true;
 
+    //i know this is unused, but without it the positining breaks
     let offset: number;
-    $: console.log(contentRect?.left ?? 0 + left*Math.min(base, 80));
 </script>
 
 <div class="backgroundContainer" bind:clientHeight={height} bind:clientWidth={width} style="background-size: {input.length*Math.min(base, 80)*1.5}px {Math.max(...input)*Math.min(base, 80)*1.45}px">
