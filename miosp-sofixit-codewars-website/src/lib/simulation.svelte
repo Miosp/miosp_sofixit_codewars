@@ -1,8 +1,7 @@
 <script lang="ts">
     import BlockDisplay from "./blockDisplay.svelte";
-    import { writable } from "svelte/store";
     import { tweened } from "svelte/motion";
-    import { onMount } from "svelte";
+    import { cubicOut as cu } from "svelte/easing";
 
     export let input: number[];
     let fluidHeight: number[] = input.map((x)=>0);
@@ -16,9 +15,11 @@
     export let left = 0;
     export let right = 0;
     export let result = 0;
+    export let leftMax = 0;
+    export let rightMax = 0;
 
-    let leftTweened = tweened(0, {duration: 500});
-    let rightTweened = tweened(0, {duration: 500});
+    let leftTweened = tweened(0, {duration: 500, easing: cu});
+    let rightTweened = tweened(0, {duration: 500, easing: cu});
 
     export async function runSimulation(){
         cleanSimulation();
@@ -26,8 +27,8 @@
         result = 0;
         left = 0;
         right = input.length - 1;
-        let leftMax = 0;
-        let rightMax = 0;
+        leftMax = 0;
+        rightMax = 0;
         
         leftTweened.set(left, {duration: 0});
         rightTweened.set(right, {duration: 0});
