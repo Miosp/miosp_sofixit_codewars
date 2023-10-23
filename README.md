@@ -1,10 +1,10 @@
 # Welcome to my Sofixit Code Wars solution repo!
 
-The provided problem can be solved in multiple ways, so i will try to provide my thought process and a couple of possible solutions.
+The provided problem can be solved in multiple ways, so I will try to provide my thought process and a couple of possible solutions.
 
 ## 1. Gathering information
-On the website we see graphics of pillars with different heights and some fluid flowing between the gaps. From the animation i assume, that the pillars are some kind of walls and the correct solution is to calculate amount of water which can fit within given wall configuratin without spillage. 
-I checked both provided examples and *boom* both correct. I must be onto something.
+On the website we see graphics of pillars with different heights and some fluid flowing between the gaps. From the animation I assume, that the pillars are some kind of walls and the correct solution is to calculate amount of water which can fit within given wall configuratin without spillage. 
+I checked both provided examples and *boom* are both correct. I must be onto something.
 
 ## 2. Brute force approach
 First try is made to check if understanding of the problem is correct and to possibly have some generated solutions to check against.
@@ -85,7 +85,10 @@ int material(vector<int> array){
 This way we don't need to store any additional data, so space complexity falls to O(1) and time complexity stays O(n).
 
 ## 5. Practical presentation on a website
-Since it's always nice to see how any solution works in practice, i decided to create a website where you can see the solution in action. You can find it [here](https://miosp.github.io/miosp_sofixit_codewars/). I used Svelte and Typescript to create it. The graphical aseets are based on the graphics from original problem website and i tried to recreate them as closely as i could. The website is only a small addition to the solution, so it is not very feature rich, but it is enough to show how the solution works. I hope you like it.
+Since it's always nice to see how any solution works in practice, I decided to create a website where you can see the solution in action. You can find it [here](https://miosp.github.io/miosp_sofixit_codewars/). I used Svelte and Typescript to create it. The graphical assets are based on the graphics from original problem website and I tried to recreate them as closely as I could. The website is only an addition to the solution, so it is not very feature rich, but it is enough to show how the solution works and contains some nice animations. I hope you like it.
 
 ## 6. AI?
-Since the material function is deterministic and takes an array of integers, we can try to train a model, which will try to predict the output of the function. Unfortunately since the input data is not treated as a sequence any methods such as RNNs and LSTMs are out of the question. Also CNNs are not good, because of global nature of each data point (any height can potentially influence any other). I tried to use a simple network with a couple of layers and in order to support variable size - use padding, but my results were horrible. Perhaps I have not enough knowledge in this field to choose right architecture, but i think that this problem is not suited for neural networks.
+Since the material function is deterministic and takes an array of integers, we can try to train a model, which will try to predict the output of the function. Unfortunately since the input data is not treated as a sequence any methods such as RNNs with LSTMs are out of the question. Also CNNs are not good, because of global nature of each data point (any height can potentially influence any other). I tried to use a simple network with a couple of layers and in order to support variable size - use padding, but my results were horrible. Perhaps I have not enough knowledge in this field to choose right architecture, but I think that this problem is not suited for neural networks.
+
+## 7. Conclusion
+I hope you enjoyed my solution and the website. I tried to make it as interesting as possible. I had a good time solving this problem and I hope you liked reading about it. Solving this type of problem requires a lot of thinking in a different way than we are used to, so it is always a good exercise. Besides that making a website to show how the solution works can make people unfamiliar with the problem understand it better. It also turned out that AI is not always the best solution for a problem (even though technically AI solution is possible).
