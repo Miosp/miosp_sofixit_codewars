@@ -109,7 +109,7 @@ dialog {
 	animation-duration: 0.3s;
 	animation-timing-function: ease-out;
   background-color: #333;
-  max-width: 1500px;
+  max-width: min(1500px, 95vw);
 }
 
 dialog[open] {

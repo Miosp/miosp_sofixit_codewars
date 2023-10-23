@@ -41,13 +41,13 @@
     </div>
     <p>Made By Jan Ludwina</p>
     <p style="font-size: 0.8rem">
-      This website is a demo of an implementation of Sofixit Code Wars task. The task was to prepare a function, that solves a given task. <br><br>My solution works like that:<br>
+      This website is a demo implementation of Sofixit Code Wars task. The task was to prepare a function, that solves a given task. <br><br>My solution works like that:<br>
       1. Create two pointers, one on the left and one on the right side of the array, two variables for remembering maximum values which the pointers met and one variable for result<br>
       2. While the pointers are not pointing at the same element:<br>
       &nbsp;&nbsp;&nbsp;&nbsp;2.1. Select the pointer with smaller value<br>
       &nbsp;&nbsp;&nbsp;&nbsp;2.2. If the value in the pointer is bigger than the one in this side's maximum, set the maximum value of this side, else add to the result this side's maximum minus height of wall in pointers position<br>
       &nbsp;&nbsp;&nbsp;&nbsp;2.3. Depending on which pointer was selected, move it to the next element (left to right, and right to left)<br><br>
-      This works because we need to know the lower of maximums from both sides in order to calculate the value to add to result for each index in the array. If we choose a pointer to move in each iteration, we are sure that value under the pointer is smaller than the one on the other size, so we don't need to care about other side's maximum.
+      This works because we need to know the lower of maxima from both sides in order to calculate the value to add to result for each index in the array. If we choose a pointer to move in each iteration, we are sure that value under the pointer is smaller than the one on the other side, so we don't have to care about other side's maximum.
     </p>
   </dialog>
   <div class="rowContainer">
@@ -134,7 +134,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 10%;
     padding: 0px 2rem;
   }
 </style>
